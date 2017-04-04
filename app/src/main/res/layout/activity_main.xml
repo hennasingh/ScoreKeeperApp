@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/combat"
+        tools:context="artist.web.scorekeeperapp.MainActivity">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            shimmer:duration="2000">
+
+            <TextView
+                android:id="@+id/GOT_logo"
+                style="@style/BasicLayoutStyle.gotTextLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/gotText" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:id="@+id/mainHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shimmerlayout"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/teamMarginTop"
+                    android:contentDescription="@string/starkLogo"
+                    android:gravity="center"
+                    android:src="@drawable/starks_team" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/healthHeart"
+                        android:src="@drawable/yellow_heart" />
+
+                    <ProgressBar
+                        android:id="@+id/healthBarStark"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/healthBarMargin"
+                        android:layout_marginRight="@dimen/healthBarMargin"
+                        android:layout_weight="2"
+                        android:indeterminate="false"
+                        android:minHeight="@dimen/healthBarHeight"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/custom_progress"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/scoreFireHeight"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/scoreFire"
+                        android:src="@drawable/fireball" />
+
+                    <TextView
+                        android:id="@+id/teamStark"
+                        style="@style/scoreStark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/emptyText"
+
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/teamMarginTop"
+                    android:contentDescription="@string/targLogo"
+                    android:gravity="center"
+                    android:src="@drawable/targaryen_team"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/healthHeart"
+                        android:src="@drawable/yellow_heart" />
+
+                    <ProgressBar
+                        android:id="@+id/healthBarTargaryen"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/healthBarMargin"
+                        android:layout_marginRight="@dimen/healthBarMargin"
+                        android:layout_weight="2"
+                        android:indeterminate="false"
+                        android:minHeight="@dimen/healthBarHeight"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/custom_progress"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/scoreFireHeight"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/scoreFire"
+                        android:src="@drawable/fireball" />
+
+                    <TextView
+                        android:id="@+id/teamTarg"
+                        style="@style/scoreStark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/emptyText" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainHorizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/attackMarginTop"
+            android:contentDescription="@string/attackLogo"
+            android:onClick="attackOpponent"
+            android:src="@drawable/custom_attack" />
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/BasicLayoutStyle.messageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/attack"
+            android:text=""
+            />
+
+        <Button
+            android:id="@+id/reset"
+            style="@style/newMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:onClick="newMatch"
+            android:text="@string/newMatch" />
+
+    </RelativeLayout>
+</ScrollView>

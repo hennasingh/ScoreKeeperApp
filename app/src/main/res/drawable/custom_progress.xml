@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- Define background color gradient -->
+    <item android:id="@android:id/background">
+        <shape>
+            <gradient
+                android:angle="90"
+                android:centerColor="#cccccc"
+                android:centerX="1.0"
+                android:endColor="#bbbbbb"
+                android:startColor="#dddddd" />
+        </shape>
+    </item>
+
+    <!-- Define progress bar color gradient -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <gradient
+                    android:angle="270"
+                    android:centerColor="#ff66a3"
+                    android:centerX="1.0"
+                    android:endColor="#ff66a3"
+                    android:startColor="#ff3300" />
+            </shape>
+        </clip>
+    </item>
+    </layer-list>

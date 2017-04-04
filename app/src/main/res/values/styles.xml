@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="BasicLayoutStyle">
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:textStyle">italic|bold</item>
+
+    </style>
+
+    <style name="BasicLayoutStyle.gotTextLogo">
+        <item name="android:textColor">@color/gotTextlogo</item>
+        <item name="android:textSize">@dimen/gotLogoText</item>
+    </style>
+
+    <style name="scoreStark">
+        <item name="android:layout_marginLeft">@dimen/scoreTextMargin</item>
+        <item name="android:textColor">@color/scoreColor</item>
+        <item name="android:textSize">@dimen/scoreTextSize</item>
+        <item name="android:layout_gravity">center</item>
+
+    </style>
+
+    <style name="BasicLayoutStyle.messageText">
+        <item name="android:textSize">@dimen/msgTextSize</item>
+        <item name="android:textColor">@color/messageColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/msgMarginTop</item>
+    </style>
+
+    <style name="newMatch">
+        <item name="android:layout_margin">@dimen/newMatchMargin</item>
+        <item name="android:background">@color/newMatchBg</item>
+        <item name="android:textColor">@color/newText</item>
+        <item name="android:padding">@dimen/newTextPadding</item>
+        <item name="android:textSize">@dimen/newTextSize</item>
+        <item name="android:fontFamily">monospace</item>
+
+    </style>
+
+</resources>

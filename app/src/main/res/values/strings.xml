@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ScoreKeeperApp</string>
+    <string name="gotText">Game Of Thrones</string>
+    <string name="starkLogo">Stark Logo</string>
+    <string name="targLogo">Targaryen Logo</string>
+    <string name="healthHeart">Health Heart</string>
+    <string name="scoreFire">Score Fire</string>
+    <string name="emptyText">0</string>
+    <string name="newMatch">New</string>
+    <string name="attackLogo">Attack Image Button</string>
+
+</resources>

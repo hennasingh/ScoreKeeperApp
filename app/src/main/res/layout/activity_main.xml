@@ -59,7 +59,7 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:contentDescription="@string/healthHeart"
                         android:src="@drawable/yellow_heart" />
 
@@ -88,7 +88,7 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/scoreFireHeight"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:contentDescription="@string/scoreFire"
                         android:src="@drawable/fireball" />
 
@@ -103,6 +103,33 @@
                         />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/hitIconHeight"
+                        android:layout_weight="2"
+                        android:layout_marginTop="@dimen/hitIconMT"
+                        android:contentDescription="@string/hitIcon"
+                        android:src="@drawable/hit" />
+
+                    <TextView
+                        android:id="@+id/hitStark"
+                        style="@style/scoreStark"
+                        android:layout_marginTop="@dimen/hitStarkMT"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/emptyText"
+
+                        />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -130,7 +157,7 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:contentDescription="@string/healthHeart"
                         android:src="@drawable/yellow_heart" />
 
@@ -159,7 +186,7 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/scoreFireHeight"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:contentDescription="@string/scoreFire"
                         android:src="@drawable/fireball" />
 
@@ -172,6 +199,32 @@
                         android:text="@string/emptyText" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/hitIconHeight"
+                        android:layout_weight="2"
+                        android:layout_marginTop="@dimen/hitIconMT"
+                        android:contentDescription="@string/hitIcon"
+                        android:src="@drawable/hit" />
+
+                    <TextView
+                        android:id="@+id/hitTarg"
+                        style="@style/scoreStark"
+                        android:layout_marginTop="@dimen/hitStarkMT"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/emptyText"
+
+                        />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -180,7 +233,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/mainHorizontal"
-            android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/attackMarginTop"
             android:contentDescription="@string/attackLogo"

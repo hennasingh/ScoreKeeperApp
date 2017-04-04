@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     static final String STARK_SCORE ="starkScore";
     static final String TARG_SCORE = "targScore";
     static final String MESSAGE_BOARD= "messageBoard";
+    static final String HITS_STARK ="hitScoreSt";
+    static final String HITS_TARG ="hitScoreTarg";
 
     private ProgressBar healthStark, healthTargaryen;
 
@@ -27,9 +29,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView scoreStark;
     private TextView scoreTargaryen;
     private TextView message;
+    private TextView hitScoreStark;
+    private TextView hitScoreTarg;
 
     private int teamS=0;
     private int teamT=0;
+    private int hitCounterSt=0;
+    private int hitCounterTarg=0;
 
     private int maxHealthStark =100;
     private int maxHealthTargaryen=100;
@@ -46,14 +52,18 @@ public class MainActivity extends AppCompatActivity {
         scoreStark = (TextView)findViewById(R.id.teamStark);
         scoreTargaryen = (TextView)findViewById(R.id.teamTarg);
         message = (TextView)findViewById(R.id.message);
+        hitScoreStark=(TextView)findViewById(R.id.hitStark);
+        hitScoreTarg=(TextView)findViewById(R.id.hitTarg);
 
-    /**    if(savedInstanceState!=null){
+      if(savedInstanceState!=null){
             scoreStark.setText(savedInstanceState.getInt(STARK_SCORE));
             scoreTargaryen.setText(savedInstanceState.getInt(TARG_SCORE));
             healthStark.setProgress(savedInstanceState.getInt(STARK_HEALTH_BAR));
             healthTargaryen.setProgress(savedInstanceState.getInt(TARG_HEALTH_BAR));
             message.setText(savedInstanceState.getString(MESSAGE_BOARD));
-        }*/
+           hitScoreStark.setText(savedInstanceState.getInt(HITS_STARK));
+           hitScoreTarg.setText(savedInstanceState.getInt(HITS_TARG));
+        }
     }
 
     public void attackOpponent(View view){
@@ -64,26 +74,15 @@ public class MainActivity extends AppCompatActivity {
         Random randomGenerator = new Random();
         if(randomGenerator.nextBoolean()) {
 
+            hitCounterSt++;
             displayScoreTeamStark(attackValue);
+
         }
         else{
+            hitCounterTarg++;
             displayScoreTeamTarg(attackValue);
         }
      }
-
-       public void gameOver(){
-           if(maxHealthStark<=0||teamT>=100){
-               healthStark.setProgress(maxHealthStark);
-               scoreTargaryen.setText(String.valueOf(teamT));
-               message.setText("House Targaryen Won" +"\n" + "Game Over");
-
-
-           }else
-               healthTargaryen.setProgress(maxHealthTargaryen);
-                scoreStark.setText(String.valueOf(teamS));
-               message.setText("House Stark Won" +"\n" + "Game Over");
-
-       }
 
        public void displayScoreTeamStark(int score){
            maxHealthTargaryen = maxHealthTargaryen-score;
@@ -93,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
            }
            healthTargaryen.setProgress(maxHealthTargaryen);
            scoreStark.setText(String.valueOf(teamS));
+           hitScoreStark.setText(String.valueOf(hitCounterSt));
        }
 
        public void displayScoreTeamTarg(int score){
@@ -103,26 +103,46 @@ public class MainActivity extends AppCompatActivity {
            }
            healthStark.setProgress(maxHealthStark);
            scoreTargaryen.setText(String.valueOf(teamT));
+           hitScoreTarg.setText(String.valueOf(hitCounterTarg));
        }
+    public void gameOver(){
+        if(maxHealthStark<=0||teamT>=100){
+            healthStark.setProgress(maxHealthStark);
+            scoreTargaryen.setText(String.valueOf(teamT));
+            message.setText("House Targaryen Won" +"\n" + "Game Over");
+
+
+        }else
+            healthTargaryen.setProgress(maxHealthTargaryen);
+        scoreStark.setText(String.valueOf(teamS));
+        message.setText("House Stark Won" +"\n" + "Game Over");
+
+    }
 
        public void newMatch(View view){
            teamS=0;
            teamT=0;
+           hitCounterTarg=0;
+           hitCounterSt=0;
            scoreStark.setText(String.valueOf(teamS));
+           hitScoreStark.setText(String.valueOf(hitCounterSt));
            healthStark.setProgress(100);
            scoreTargaryen.setText(String.valueOf(teamT));
+           hitScoreTarg.setText(String.valueOf(hitCounterTarg));
            healthTargaryen.setProgress(100);
            message.setText("");
        }
-/**
+
        public void onSaveInstanceState(Bundle outState){
            outState.putInt(STARK_HEALTH_BAR,maxHealthStark );
            outState.putInt(TARG_HEALTH_BAR,maxHealthTargaryen);
            outState.putInt(STARK_SCORE,teamS );
            outState.putInt(TARG_SCORE,teamT );
-           outState.putString(MESSAGE_BOARD,String.valueOf(message.getText()));
+           outState.putString(MESSAGE_BOARD,message.getText().toString());
+           outState.putInt(HITS_STARK,hitCounterSt);
+           outState.putInt(HITS_TARG,hitCounterTarg);
 
            super.onSaveInstanceState(outState);
-       }*/
+       }
 
 }

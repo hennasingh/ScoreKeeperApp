@@ -9,12 +9,15 @@
     <dimen name="scoreFireHeight">50dp</dimen>
     <dimen name="scoreTextMargin">40dp</dimen>
     <dimen name="scoreTextSize">48sp</dimen>
-    <dimen name="attackMarginTop">32dp</dimen>
+    <dimen name="attackMarginTop">70dp</dimen>
     <dimen name="newTextSize">32sp</dimen>
     <dimen name="newTextPadding">20dp</dimen>
     <dimen name="newMatchMargin">16dp</dimen>
     <dimen name="msgTextSize">40sp</dimen>
     <dimen name="msgMarginTop">32dp</dimen>
+    <dimen name="hitIconHeight">60dp</dimen>
+    <dimen name="hitStarkMT">20dp</dimen>
+    <dimen name="hitIconMT">30dp</dimen>
 
 
 </resources>

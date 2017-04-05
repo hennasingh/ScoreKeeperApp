@@ -55,16 +55,7 @@ public class MainActivity extends AppCompatActivity {
         hitScoreStark=(TextView)findViewById(R.id.hitStark);
         hitScoreTarg=(TextView)findViewById(R.id.hitTarg);
 
-      if(savedInstanceState!=null){
-            scoreStark.setText(savedInstanceState.getInt(STARK_SCORE));
-            scoreTargaryen.setText(savedInstanceState.getInt(TARG_SCORE));
-            healthStark.setProgress(savedInstanceState.getInt(STARK_HEALTH_BAR));
-            healthTargaryen.setProgress(savedInstanceState.getInt(TARG_HEALTH_BAR));
-            message.setText(savedInstanceState.getString(MESSAGE_BOARD));
-           hitScoreStark.setText(savedInstanceState.getInt(HITS_STARK));
-           hitScoreTarg.setText(savedInstanceState.getInt(HITS_TARG));
-        }
-    }
+     }
 
     public void attackOpponent(View view){
 
@@ -112,10 +103,11 @@ public class MainActivity extends AppCompatActivity {
             message.setText("House Targaryen Won" +"\n" + "Game Over");
 
 
-        }else
+        }else {
             healthTargaryen.setProgress(maxHealthTargaryen);
-        scoreStark.setText(String.valueOf(teamS));
-        message.setText("House Stark Won" +"\n" + "Game Over");
+            scoreStark.setText(String.valueOf(teamS));
+            message.setText("House Stark Won" + "\n" + "Game Over");
+        }
 
     }
 
@@ -134,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
        }
 
        public void onSaveInstanceState(Bundle outState){
+           super.onSaveInstanceState(outState);
            outState.putInt(STARK_HEALTH_BAR,maxHealthStark );
            outState.putInt(TARG_HEALTH_BAR,maxHealthTargaryen);
            outState.putInt(STARK_SCORE,teamS );
@@ -142,7 +135,27 @@ public class MainActivity extends AppCompatActivity {
            outState.putInt(HITS_STARK,hitCounterSt);
            outState.putInt(HITS_TARG,hitCounterTarg);
 
-           super.onSaveInstanceState(outState);
+
+       }
+
+       public void onRestoreInstanceState(Bundle savedInstanceState){
+
+           healthStark = (ProgressBar)findViewById(R.id.healthBarStark);
+           healthTargaryen=(ProgressBar)findViewById(R.id.healthBarTargaryen);
+           scoreStark = (TextView)findViewById(R.id.teamStark);
+           scoreTargaryen = (TextView)findViewById(R.id.teamTarg);
+           message = (TextView)findViewById(R.id.message);
+           hitScoreStark=(TextView)findViewById(R.id.hitStark);
+           hitScoreTarg=(TextView)findViewById(R.id.hitTarg);
+
+               scoreStark.setText(String.valueOf(savedInstanceState.getInt(STARK_SCORE)));
+               scoreTargaryen.setText(String.valueOf(savedInstanceState.getInt(TARG_SCORE)));
+               healthStark.setProgress(savedInstanceState.getInt(STARK_HEALTH_BAR));
+               healthTargaryen.setProgress(savedInstanceState.getInt(TARG_HEALTH_BAR));
+               message.setText(savedInstanceState.getString(MESSAGE_BOARD));
+               hitScoreStark.setText(String.valueOf(savedInstanceState.getInt(HITS_STARK)));
+               hitScoreTarg.setText(String.valueOf(savedInstanceState.getInt(HITS_TARG)));
+
        }
 
 }

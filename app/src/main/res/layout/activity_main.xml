@@ -234,6 +234,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/mainHorizontal"
             android:layout_centerInParent="true"
+            android:layout_alignBaseline="@id/mainHorizontal"
             android:layout_marginTop="@dimen/attackMarginTop"
             android:contentDescription="@string/attackLogo"
             android:onClick="attackOpponent"

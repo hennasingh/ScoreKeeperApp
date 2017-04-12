@@ -6,6 +6,6 @@
     <color name="gotTextlogo">#ff9900</color>
     <color name="scoreColor">#fff</color>
     <color name="messageColor">#ff6600</color>
-    <color name="newMatchBg">#804000</color>
+    <color name="newMatchBg">#CCef6c00</color>
     <color name="newText">#fff</color>
 </resources>

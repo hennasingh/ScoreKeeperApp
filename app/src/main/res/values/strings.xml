@@ -9,5 +9,6 @@
     <string name="newMatch">New</string>
     <string name="attackLogo">Attack Image Button</string>
     <string name="hitIcon">Hit Icon</string>
+    <string name="blankText"> </string>
 
 </resources>

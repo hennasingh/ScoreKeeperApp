@@ -5,14 +5,14 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="artist.web.scorekeeperapp.MainActivity"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context="artist.web.scorekeeperapp.MainActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg"
-        >
+        android:background="@drawable/bg">
+
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmerlayout"
@@ -99,9 +99,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="@string/emptyText"
-
-                        />
+                        android:text="@string/emptyText" />
 
                 </LinearLayout>
 
@@ -125,13 +123,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/hitStarkMT"
                         android:layout_weight="2"
-                        android:text="@string/emptyText"
-
-                        />
-
+                        android:text="@string/emptyText" />
                 </LinearLayout>
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -146,9 +139,7 @@
                     android:layout_marginTop="@dimen/teamMarginTop"
                     android:contentDescription="@string/targLogo"
                     android:gravity="center"
-                    android:src="@drawable/targaryen_team"
-
-                    />
+                    android:src="@drawable/targaryen_team" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -221,9 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/hitStarkMT"
                         android:layout_weight="2"
-                        android:text="@string/emptyText"
-
-                        />
+                        android:text="@string/emptyText" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -246,7 +235,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/attack"
-            android:text="" />
+            tools:text="@string/blankText" />
 
         <Button
             android:id="@+id/reset"
